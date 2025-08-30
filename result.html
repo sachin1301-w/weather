@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>🌍 Weather in {{ weather.city }}, {{ weather.country }}</h2>
+        <p><b>Temperature:</b> {{ weather.current_temp }}°C</p>
+        <p><b>Feels Like:</b> {{ weather.feels_like }}°C</p>
+        <p><b>Min Temp:</b> {{ weather.temp_min }}°C | <b>Max Temp:</b> {{ weather.temp_max }}°C</p>
+        <p><b>Humidity:</b> {{ weather.humidity }}%</p>
+        <p><b>Pressure:</b> {{ weather.pressure }} hPa</p>
+        <p><b>Description:</b> {{ weather.description }}</p>
+        <p><b>Rain Prediction:</b> {{ rain_prediction }}</p>
+
+        <h3>Future Predictions</h3>
+        <img src="{{ url_for('static', filename='temp.png') }}" width="400">
+        <img src="{{ url_for('static', filename='humidity.png') }}" width="400">
+        <br>
+        <a href="/">🔙 Back</a>
+    </div>
+</body>
+</html>
